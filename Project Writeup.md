@@ -8,7 +8,7 @@ I completed the project in the project workspace provided by Udacity. The worksp
 
 # Dataset
 ## Dataset Analysis
-The implementation and original images for the exploratory analysis of our dataset can be found in the [Exploratory Data Analysis](Exploratory+Data+Analysis.ipynb) notebook.
+The implementation and original images for the exploratory analysis of our dataset can be found in the [Exploratory Data Analysis](https://github.com/jiangnan2341/UdacitySDCE_P1/blob/main/Exploratory%20Data%20Analysis.ipynb) notebook.
 
 At first glance, it becomes obvious that the class distribution in our dataset is highly imbalanced. There are a lot of vehicles, as opposed to lesser pedestrians and almost no bicycles. Model performance (average precision, recall etc.) should thus be monitored closely especially for the minority classes. In order to avoid poor performance of the object detection for the minority class, one could adopt multitude of strategies such as data augmentation for the underrepresented class.
 Further proposals, such as adapting the performance metrics, can be found here.
