@@ -26,7 +26,9 @@ The class distribution and the light condition distribution are illustrated in d
 The creation of training vs. validation split, which is usually performed based on the exploratory analysis, was already done in the workspace, with 87 : 10 TFRecords in the training and validation set, respectively. This corresponds to a 90% : 10% split, which is common practice.
 # Training
 ## Reference experiment
-As expected, the reference run with the pretrained model did not yield optimal results. The losses decrease with the number of epochs, but e.g. the classification loss seems to reach a base plateau rather fast. The final overall loss is about 4.2.
+As expected, the reference run with the pretrained model did not yield optimal results. The losses decrease with the number of epochs, but e.g. the classification loss seems to reach a base plateau rather fast. The final overall loss is about 15.2.
+![](experiments/reference/Reference1.png)
+![](experiments/reference/Reference2.png)
 
 Looking at the evaluation metrics, we can observe that the average precision and recall values are all very low (for a IoU threshold of 0.5) and that hence the model does not yet perform well on a new dataset.
 ## Improve on the reference
