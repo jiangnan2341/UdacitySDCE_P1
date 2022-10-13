@@ -19,9 +19,11 @@ Image distortions can be observed as well, especially on the image edges.
 In images with multiple objects, objects tend to be clustered and occlude each other.
 
 The class distribution and the light condition distribution are illustrated in diagrams below:
+![](class_pie.png)
+![](brightness_EDA.png)
 
 ## Cross-validation
-The creation of training vs. validation split, which is usually performed based on the exploratory analysis, was already done in the workspace, with 87 : 10 TFRecords in the training and validation set, respectively. This corresponds to a 90% : 10% split.
+The creation of training vs. validation split, which is usually performed based on the exploratory analysis, was already done in the workspace, with 87 : 10 TFRecords in the training and validation set, respectively. This corresponds to a 90% : 10% split, which is common practice.
 # Training
 ## Reference experiment
 As expected, the reference run with the pretrained model did not yield optimal results. The losses decrease with the number of epochs, but e.g. the classification loss seems to reach a base plateau rather fast. The final overall loss is about 4.2.
