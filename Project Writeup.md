@@ -66,8 +66,10 @@ Not surprisingly, I ran into OOM issue again even after I deleted all checkpoint
 
 ![](experiments/experiment1/Experiment1_train1.png)
 
-Again, because new checkpoint gets created every 500 steps, I can only get evaluation results upto 3500 steps. By comparing the evaluation results, I can see that improvements in all metrics, yet I have to admit the results are still not good enough. The animation is evidence showing the training model is still not good enough because it fail to create any bounding boxes in the animation.
-
-![](animation.mp4)
+Again, because new checkpoint gets created every 500 steps, I can only get evaluation results upto 3500 steps. By comparing the evaluation results, I can see that improvements in all metrics, yet I have to admit the results are still not good enough. 
 
 ![](experiments/experiment1/Experiment1EvalSummary.png)
+
+The animation is evidence showing the training model is still not good enough because it fail to create any bounding boxes in the animation.
+
+If the space on workspace allows, I would perform more experiments. What I have tried has not generated a good enough module but does proved the concept that by making use of augmentation on data and play with parameter values, we can improve the training and eventually get better model.
