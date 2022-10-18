@@ -41,5 +41,7 @@ The evaluation results were still bad but much better than the previous one.
 Looking at the evaluation metrics, we can observe that the average precision and recall values are all very low (for a IoU threshold of 0.5) and that hence the model does not yet perform well on a new dataset.
 
 ## Improve on the reference
-In order to improve the performance, I first tried to change the batch size from 2 to 
-The other problem I ran into with this 5000 steps reference experiment is that the OOM issue occured around 4000 steps, and that's after I used Menu->Reset Data in the workspace. Therefore I was not able to finish all the steps. I saw some other people tried 25K steps the posts, guess they managed to do that in their local settings. New checkpoint gets created every 500 steps with the default setting, with that I can only get evaluation results upto 3500 steps.
+In order to improve the performance, I first tried to change the batch size from 2 to 4 and added brightness augmentation, and set total step number to 5000. I got OOM issue again, but this time I don't want to use Menu->Reset Data because I don't want to keep some of my work. I end up removing all checkpoints created during reference training. However, I still got into OOM problem when got to step 3500. I saw some other people tried 25K steps in the posts, guess they managed to do that in their local settings. New checkpoint gets created every 500 steps with the default setting, with that I can only get evaluation results upto 3500 steps. The tensorboard diagrams (shown below) don't really reveal much improvement from my 5000 step reference experiment, instead, it's acutually worse, so I didn't bother to try to finish the 5000 steps. 
+
+![](experiments/experiment0/Experiment0_train1.png)
+
