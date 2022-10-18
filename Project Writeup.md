@@ -66,6 +66,8 @@ Not surprisingly, I ran into OOM issue again even after I deleted all checkpoint
 
 ![](experiments/experiment1/Experiment1_train1.png)
 
-Again, because new checkpoint gets created every 500 steps, I can only get evaluation results upto 3500 steps.
+Again, because new checkpoint gets created every 500 steps, I can only get evaluation results upto 3500 steps. By comparing the evaluation results, I can see that improvements in all metrics, yet I have to admit the results are still not good enough. The animation is evidence showing the training model is still not good enough because it fail to create any bounding boxes in the animation.
+
+![](animation.mp4)
 
 ![](experiments/experiment1/Experiment1EvalSummary.png)
