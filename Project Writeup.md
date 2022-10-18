@@ -26,9 +26,10 @@ The class distribution and the light condition distribution are illustrated in d
 The creation of training vs. validation split, which is usually performed based on the exploratory analysis, was already done in the workspace, with 87 : 10 TFRecords in the training and validation set, respectively. This corresponds to a 90% : 10% split, which is common practice.
 # Training
 ## Reference experiment
-As expected, the reference run with the pretrained model did not yield optimal results. The losses decrease with the number of epochs, but e.g. the classification loss seems to reach a base plateau rather fast. The final overall loss is about 15.2.
+The results yielded by the first reference run with the pretrained model were surprisingly bad. As the training steps increase, all loss values flutuated a lot from the very beginning and even worse, the normalization, regularization and total loss values jumped to an unbelievably high value toward the end of the default 2500 steps. Within the default 2500 steps, from the tensorboard diagrams, I don't see any good trend. 
 ![](experiments/reference/Reference1.png)
-![](experiments/reference/Reference2.png)
-
+I didn't bother to try evaluation with this bad training result and figured that maybe I can get a better training result with increased steps. Based on mentor's answer to someone else's questions, I increased the number of steps to 5000.
+This time, the yielded results were still not optimal but looked much better and similar to what is demonstrated in the project instructions. The loss values still fluctuated a lot, but at least there is clear descrease trend shown in the captured tensorboard diagrams.
+![](experiments/reference1/Reference1.png)
 Looking at the evaluation metrics, we can observe that the average precision and recall values are all very low (for a IoU threshold of 0.5) and that hence the model does not yet perform well on a new dataset.
 ## Improve on the reference
