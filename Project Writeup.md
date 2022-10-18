@@ -62,4 +62,10 @@ In order to get obvious performance change, I changed the batch size from 2 to 8
 * Increase the diversity in brightness and contrast across given images.
 * Mimic blurs and flares caused by different weather conditions
 
-Not surprisingly, I ran into OOM issue again even after I deleted all checkpoints created in previous experiments. However, with the data I can get (almost upto 4000 steps), I can see some obvious improvements in performance.
+Not surprisingly, I ran into OOM issue again even after I deleted all checkpoints created in previous experiments. However, with the data I can get (almost upto 4000 steps), I can see some obvious improvements in performance. The total loss value is dropping as training goes on and is 1.303 on step 3800. If the workspace allowed more steps to run, I think it's safe to assume it can get the loss value to below 1.
+
+![](experiments/experiment1/Experiment1_train1.png)
+
+Again, because new checkpoint gets created every 500 steps, I can only get evaluation results upto 3500 steps.
+
+![](experiments/experiment1/Experiment1EvalSummary.png)
