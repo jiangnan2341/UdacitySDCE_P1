@@ -36,7 +36,7 @@ This time, the yielded results were still not optimal but looked much better and
 ![](experiments/reference1/Reference5000steps1.png)
 The evaluation results were still bad but much better than the previous one.
 
-![](experiments/reference1/ReferenceEvalSummary.png)
+![](experiments/reference1/ReferenceEvalSummary5000steps.png)
 
 Looking at the evaluation metrics, we can observe that the average precision and recall values are all very low (for a IoU threshold of 0.5) and that hence the model does not yet perform well on a new dataset.
 
