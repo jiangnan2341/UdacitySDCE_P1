@@ -32,6 +32,10 @@ I didn't bother to try evaluation with this bad training result and figured that
 This time, the yielded results were still not optimal but looked much better and similar to what is demonstrated in the project instructions. The loss values still fluctuated a lot, but at least there is clear descrease trend shown in the captured tensorboard diagrams. From the diagrams, I can see that even within the 25000 steps, the loss values during the training process were not as bad as the first trial. I'm guessing maybe the first trial was so bad because the chosen data happened to be extremely bad? (I learnt from other posts that each time we rerun, the training won't be done on same data because the used data is randomly chosen from the big data pool.)
 ![](experiments/reference1/Reference5000steps1.png)
 The other problem I ran into with this 5000 steps reference experiment is that the OOM issue occured around 4000 steps, and that's after I used Menu->Reset Data in the workspace. Therefore I was not able to finish all the steps. I saw some other people tried 25K steps the posts, guess they managed to do that in their local settings. New checkpoint gets created every 500 steps with the default setting, with that I can only get evaluation results upto 3500 steps.
+
 ![](experiments/reference1/ReferenceEvalSummary.png)
+
 Looking at the evaluation metrics, we can observe that the average precision and recall values are all very low (for a IoU threshold of 0.5) and that hence the model does not yet perform well on a new dataset.
+
 ## Improve on the reference
+In order to improve the performance, I first tried to change the batch size from 2 to 
