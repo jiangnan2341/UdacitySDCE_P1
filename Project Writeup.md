@@ -28,10 +28,13 @@ The creation of training vs. validation split, which is usually performed based 
 ## Reference experiment
 The results yielded by the first reference run with the pretrained model were surprisingly bad. As the training steps increase, all loss values flutuated a lot from the very beginning and even worse, the normalization, regularization and total loss values jumped to an unbelievably high value toward the end of the default 2500 steps. Within the default 2500 steps, from the tensorboard diagrams, I don't see any good trend. 
 ![](experiments/reference/Reference1.png)
-I didn't bother to try evaluation with this bad training result and figured that maybe I can get a better training result with increased steps. Based on mentor's answer to someone else's questions, I increased the number of steps to 5000.
+Not to my surprise, the evaluation results are very bad as shown below:
+![](experiments/reference/ReferenceEvalSummary.png)
+
+I figured that maybe I can get a better training result with increased steps. Based on mentor's answer to someone else's questions, I increased the number of steps to 5000. However, I ran into OOM issue when I try the reference experiment with the updated steps number again. I did manage to successfully finish the training after I perform Menu->Reset Data in the workspace.
 This time, the yielded results were still not optimal but looked much better and similar to what is demonstrated in the project instructions. The loss values still fluctuated a lot, but at least there is clear descrease trend shown in the captured tensorboard diagrams. From the diagrams, I can see that even within the 25000 steps, the loss values during the training process were not as bad as the first trial. I'm guessing maybe the first trial was so bad because the chosen data happened to be extremely bad? (I learnt from other posts that each time we rerun, the training won't be done on same data because the used data is randomly chosen from the big data pool.)
 ![](experiments/reference1/Reference5000steps1.png)
-The other problem I ran into with this 5000 steps reference experiment is that the OOM issue occured around 4000 steps, and that's after I used Menu->Reset Data in the workspace. Therefore I was not able to finish all the steps. I saw some other people tried 25K steps the posts, guess they managed to do that in their local settings. New checkpoint gets created every 500 steps with the default setting, with that I can only get evaluation results upto 3500 steps.
+The evaluation results were still bad but much better than the previous one.
 
 ![](experiments/reference1/ReferenceEvalSummary.png)
 
@@ -39,3 +42,4 @@ Looking at the evaluation metrics, we can observe that the average precision and
 
 ## Improve on the reference
 In order to improve the performance, I first tried to change the batch size from 2 to 
+The other problem I ran into with this 5000 steps reference experiment is that the OOM issue occured around 4000 steps, and that's after I used Menu->Reset Data in the workspace. Therefore I was not able to finish all the steps. I saw some other people tried 25K steps the posts, guess they managed to do that in their local settings. New checkpoint gets created every 500 steps with the default setting, with that I can only get evaluation results upto 3500 steps.
